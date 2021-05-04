@@ -7,6 +7,6 @@
 
 ### Scenarios
 
-- Group 1
+- Group 1 [images/empty.txt]
 - Group 2
 - Group 3
