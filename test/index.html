@@ -17,7 +17,7 @@
           htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
 
           const respSub = await fetch(root + "/" + file.name + "/" + branch);
-          const dataSub = await response.json();
+          const dataSub = await respSub.json();
           console.log(dataSub);
           for (let fileS of dataSub) {
             htmlString += '<p><a href="${fileS.path}">${fileS.name}</a></p>';
