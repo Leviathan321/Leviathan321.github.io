@@ -15,6 +15,3 @@
 
 
 ### Collaborators
-
-
-[test](other.html)
