@@ -3,6 +3,6 @@
 
 | Scenario name  | Description |  Preview | 
 | ------------- | ------------- | --------- |
-| [Content Cell](download)  | Content Cell  | Content Cell  | 
-| [Content Cell](download)   | Content Cell  | Content Cell  | 
+| [scenario1](/cut-in.xosc)  | Content Cell  |  [scenario1_img] (images.jpg)  | 
+| [scenario2](/cut-in.xosc)   | Content Cell  |[scenario1_img] (images.jpg) | 
 
