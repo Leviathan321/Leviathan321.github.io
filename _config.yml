@@ -1,5 +1,7 @@
-title: OSC  
-author: fortiss
+title: OSC Database
+author:
+  name: John Smith
+  email: "john.smith@foobar.com"
 #description: description text
 
 plugins:
@@ -8,6 +10,7 @@ plugins:
 relative_links:
   enabled: true
   #collections: true
+  
 include:
   - CONTRIBUTING.md
   - README.md
