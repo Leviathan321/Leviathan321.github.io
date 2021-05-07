@@ -4,6 +4,7 @@ author: fortiss
 
 plugins:
   - jekyll-relative-links
+  
 relative_links:
   enabled: true
   #collections: true
@@ -18,3 +19,7 @@ include:
   - PULL_REQUEST_TEMPLATE.md
 
 theme: minima
+
+header_pages:
+  - LICENSE.md
+ 
