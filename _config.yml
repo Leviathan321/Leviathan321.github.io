@@ -1,6 +1,6 @@
 title: OSC  
 author: fortiss
-description: description text
+#description: description text
 
 plugins:
   - jekyll-relative-links
