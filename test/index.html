@@ -16,7 +16,7 @@
         } else {            
           htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
           const subPath = root + "/" + file.name + "/" + branch;
-          const respSub = await fetch(subpath);
+          const respSub = await fetch(subPath);
           const dataSub = await respSub.json();
           console.log(subPath);
           console.log(respSub);
