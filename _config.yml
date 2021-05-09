@@ -2,7 +2,7 @@ title: OSC Database
 author: fortiss
 email: fortiss@fortiss.org
 
-#description: description text
+description: description text
 
 plugins:
   - jekyll-relative-links
