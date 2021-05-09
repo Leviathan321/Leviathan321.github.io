@@ -25,5 +25,5 @@ theme: minima
 
 header_pages:
     - name: Downlod Scenarios
-      url: https://github.com
+      url: /scenarios/zip
  
