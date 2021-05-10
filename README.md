@@ -1,4 +1,4 @@
-## OpenScenario database for testing autonomous vehicles
+## Hierarchical clustering of driving scenarios
 
 ### Description
 
