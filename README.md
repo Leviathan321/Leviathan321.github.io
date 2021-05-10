@@ -16,4 +16,4 @@
 
 ### [About](/ABOUT.md)
 
-[test link]
+[Link button](http://example.com/){: .btn .btn-blue }
