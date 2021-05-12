@@ -1,5 +1,8 @@
-
-# Group1 Scenarios
+---
+layout: article
+title: Group1 Scenarios
+permalink: /scenarios/group2
+---
 
 | Scenario name  | Description |  Preview | 
 | ------------- | ------------- | --------- |

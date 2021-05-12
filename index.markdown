@@ -1,23 +1,30 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: article
+title: Hierarchical clustering of driving scenarios
+mode: immersive
+header:
+  theme: dark
+article_header:
+  type: overlay
+  theme: dark
+  background_color: '#203028'
+  background_image:
+    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    src: /assets/images/cover.png
 ---
-## OpenScenario database for testing autonomous vehicles
-
 ### Description
 
-
-
+This is the description of the project
 
 ### Scenarios
 
-- [Group 1](scenarios/group1/)
-- [Group 2](scenarios/group2/)
-- [Group 3](scenarios/group3/)
+- [group1](scenarios/group1/)
+- [group2](scenarios/group2/)
+- [group3](scenarios/group3/)
+
+### About
 
 ### License
 
+MIT License
 
-### About

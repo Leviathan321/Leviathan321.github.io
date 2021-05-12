@@ -1,21 +1,21 @@
-title: OSC Database
+title: fortiss
 author: fortiss
 email: fortiss@fortiss.org
 
-#description: description text
+description: Hierarchical clustering of driving scenarios
 
-#plugins:
-#  - jekyll-relative-links
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+highlight_theme: default
+
+analytics:
+  provider: google
+  google:
+    tracking_id: #"your-google-analytics-tracking-code"
+    anonymize_ip: true
   
-#relative_links:
-  #enabled: true
-  #collections: true
-
-#theme: minima
-
-header_pages:
-  - LICENSE.md
- 
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -36,34 +36,6 @@ header_pages:
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
 # Build settings
-theme: minima
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+theme: jekyll-text-theme

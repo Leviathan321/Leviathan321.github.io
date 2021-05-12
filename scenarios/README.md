@@ -1,7 +1,26 @@
-### Scenarios
+---
+layout: article
+title: Scenarios
+permalink: /scenarios/
+---
 
-- [Group 1](/scenarios/group1/)
-- [Group 2](/scenarios/group2/)
-- [Group 3](/scenarios/group3/)
+Text ...
+
+
+## Database
+
+This is the result of the clustering...
+
+The first level contains:
+
+
+| Scenario Cluster  | Description   | 
+| ------------- | ------------- |
+| [group1](\scenarios\\group1) | Description |
+| [group2](\scenarios\\group2) | Description |
+| [group3](\scenarios\\group3) | Description |
+
+## Customization
+
 
 [back to main](/)
