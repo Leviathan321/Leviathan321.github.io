@@ -1,7 +1,7 @@
 ---
 layout: article
-title: Group1 Scenarios
-permalink: /scenarios/group2
+title: Group3 Scenarios
+permalink: /scenarios/group3
 ---
 
 | Scenario name  | Description |  Preview | 
