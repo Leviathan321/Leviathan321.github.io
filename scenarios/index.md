@@ -19,7 +19,7 @@ The first level contains:
 | [group1](\scenarios\\group1) | Description |
 | [group2](\scenarios\\group2) | Description |
 | [group3](\scenarios\\group3) | Description |
-| [Highways](\scenarios\\Highways) | Description |
+| [Highways](\scenarios\\highways) | Description |
 
 ## Customization
 
