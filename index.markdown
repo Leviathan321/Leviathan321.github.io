@@ -22,6 +22,7 @@ This is the description of the project
 - [group2](scenarios/group2)
 - [group3](scenarios/group3)
 - [Highways](scenarios/highways)
+- [2lanes](scenarios/2lanes)
 
 ### About
 

@@ -1,0 +1,178 @@
+<OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
+	<FileHeader author="esmini-team" date="2020-10-09T10:00:00" description="ego-vehicle drives on the right lane with a following vehicle while being overtaken" revMajor="1" revMinor="0" />
+	<ParameterDeclarations>
+		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
+		<ParameterDeclaration name="EgoStartS" parameterType="double" value="75" />
+		<ParameterDeclaration name="EgoTargetSpeed" parameterType="double" value="40" />
+		<ParameterDeclaration name="OverTakerVehicle" parameterType="string" value="car_blue" />
+		<ParameterDeclaration name="OverTakerStartS" parameterType="double" value="40" />
+		<ParameterDeclaration name="OverTakerStartSpeed" parameterType="double" value="40" />
+		<ParameterDeclaration name="OverTakerTargetSpeed" parameterType="double" value="50" />
+		<ParameterDeclaration name="RFVehicle" parameterType="string" value="car_yellow" />
+		<ParameterDeclaration name="RFVehicleStartS" parameterType="double" value="60" />
+	</ParameterDeclarations>
+	<CatalogLocations>
+		<VehicleCatalog>
+			<Directory path="Catalogs/Vehicles" />
+		</VehicleCatalog>
+	</CatalogLocations>
+	<RoadNetwork>
+		<LogicFile filepath="Catalogs/roads/2lane-motorway.xodr" />
+	</RoadNetwork>
+	<Entities>
+		<ScenarioObject name="Ego">
+			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$HostVehicle" />
+		</ScenarioObject>
+		<ScenarioObject name="OverTaker">
+			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$OverTakerVehicle" />
+		</ScenarioObject>
+		<ScenarioObject name="RFollower">
+			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$RFVehicle" />
+		</ScenarioObject>
+	</Entities>
+	<Storyboard>
+		<Init>
+			<Actions>
+				<Private entityRef="Ego">
+					<PrivateAction>
+						<TeleportAction>
+							<Position>
+								<LanePosition laneId="-4" offset="0" roadId="0" s="$EgoStartS" />
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+					<PrivateAction>
+						<LongitudinalAction>
+							<SpeedAction>
+								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionTarget>
+									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
+								</SpeedActionTarget>
+							</SpeedAction>
+						</LongitudinalAction>
+					</PrivateAction>
+				</Private>
+				<Private entityRef="RFollower">
+					<PrivateAction>
+						<TeleportAction>
+							<Position>
+								<LanePosition laneId="-4" offset="0" roadId="0" s="$RFVehicleStartS" />
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+					<PrivateAction>
+						<LongitudinalAction>
+							<SpeedAction>
+								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionTarget>
+									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
+								</SpeedActionTarget>
+							</SpeedAction>
+						</LongitudinalAction>
+					</PrivateAction>
+				</Private>
+				<Private entityRef="OverTaker">
+					<PrivateAction>
+						<TeleportAction>
+							<Position>
+								<LanePosition laneId="-3" offset="0" roadId="0" s="$OverTakerStartS" />
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+					<PrivateAction>
+						<LongitudinalAction>
+							<SpeedAction>
+								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionTarget>
+									<AbsoluteTargetSpeed value="$OverTakerStartSpeed" />
+								</SpeedActionTarget>
+							</SpeedAction>
+						</LongitudinalAction>
+					</PrivateAction>
+				</Private>
+			</Actions>
+		</Init>
+		<Story name="Forwarding">
+						<Act name="EgoOverTakenAct">
+				<ManeuverGroup maximumExecutionCount="1" name="Maneuver">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="Ego" />
+					</Actors>
+					<Maneuver name="TheManeuver">
+						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+							<Action name="Continue">
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition conditionEdge="none" delay="0" name="ondition">
+										<ByValueCondition>
+											<SimulationTimeCondition rule="greaterThan" value="0" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<ManeuverGroup maximumExecutionCount="1" name="ManeuverOvertaker">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="OverTaker" />
+					</Actors>
+					<Maneuver name="TheManeuver">
+						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+							<Action name="Continue">
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$OverTakerTargetSpeed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition conditionEdge="none" delay="0" name="condition">
+										<ByValueCondition>
+											<SimulationTimeCondition rule="greaterThan" value="0" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition conditionEdge="rising" delay="1" name="ActStart">
+							<ByValueCondition>
+								<SimulationTimeCondition rule="greaterThan" value="0" />
+							</ByValueCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+			</Act>
+		</Story>
+		<StopTrigger>
+			<ConditionGroup>
+				<Condition conditionEdge="rising" delay="8" name="Stop">
+					<ByValueCondition>
+						<SimulationTimeCondition rule="greaterThan" value="0" />
+					</ByValueCondition>
+				</Condition>
+			</ConditionGroup>
+				</StopTrigger>
+	</Storyboard>
+</OpenSCENARIO>
