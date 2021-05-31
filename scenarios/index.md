@@ -1,27 +1,11 @@
 ---
 layout: article
-title: Scenarios
-permalink: /scenarios/
+title: 
+permalink: /scenarios//
 ---
+# 
 
-Text ...
-
-
-## Database
-
-This is the result of the clustering...
-
-The first level contains:
-
-
-| Scenario Cluster  | Description   | 
-| ------------- | ------------- |
-| [group1](\scenarios\\group1) | Description |
-| [group2](\scenarios\\group2) | Description |
-| [group3](\scenarios\\group3) | Description |
-| [Highways](\scenarios\\highways) | Description |
-
-## Customization
-
-
+- [2lanes](/scenarios//2lanes)
+- [3lanes](/scenarios//3lanes)
+- [group1](/scenarios//group1)
 [back to main](/)

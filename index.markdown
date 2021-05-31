@@ -18,11 +18,9 @@ This is the description of the project
 
 ### Scenarios
 
-- [group1](scenarios/group1)
-- [group2](scenarios/group2)
-- [group3](scenarios/group3)
-- [Highways](scenarios/highways)
-- [2lanes](scenarios/2lanes)
+- [2lanes](/scenarios//2lanes)
+- [3lanes](/scenarios//3lanes)
+- [group1](/scenarios//group1)
 
 ### About
 
