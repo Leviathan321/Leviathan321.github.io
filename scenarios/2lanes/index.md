@@ -1,7 +1,7 @@
 ---
 layout: article
 title: 2lanes
-permalink: /scenarios/2lanes/
+permalink: /scenarios/2lanes
 ---
 
 # 2lanes
