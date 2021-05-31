@@ -1,8 +1,9 @@
 ---
 layout: article
 title: 2lanes
-permalink: /scenarios/2lanes/
+permalink: /scenarios/2lanes\
 ---
+
 # 2lanes
 
 - [2-forwarding-ego-left](/scenarios/2lanes/2-forwarding-ego-left)
