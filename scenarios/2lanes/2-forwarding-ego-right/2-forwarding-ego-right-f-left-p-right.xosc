@@ -1,5 +1,5 @@
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader author="esmini-team" date="2020-10-09T10:00:00" description="Basic cut-in with interactive controller" revMajor="1" revMinor="0" />
+	<FileHeader author="esmini-team" date="2020-10-09T10:00:00" description="ego-vehicle drives on the right lane with a preceding vehicle and a following vehicle on the left" revMajor="1" revMinor="0" />
 	<ParameterDeclarations>
 		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
 		<ParameterDeclaration name="RPVehicle" parameterType="string" value="car_yellow" />
