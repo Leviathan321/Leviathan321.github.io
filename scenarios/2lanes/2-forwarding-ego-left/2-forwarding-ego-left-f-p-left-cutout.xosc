@@ -1,5 +1,5 @@
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader author="esmini-team" date="2020-10-09T10:00:00" description="ego-vehicle drives on the left lane with a preceding vehicle and a following vehicle; a cut-out to the right happens in front of the ego-vehicle" revMajor="1" revMinor="0" />
+	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="ego-vehicle drives on the left lane with a preceding vehicle and a following vehicle; a cut-out to the right happens in front of the ego-vehicle" author="esmini-team" />
 	<ParameterDeclarations>
 		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
 		<ParameterDeclaration name="RPVehicle" parameterType="string" value="car_yellow" />
@@ -36,14 +36,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$EgoStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$EgoStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -55,14 +55,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$RPrecederStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$RPrecederStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -74,14 +74,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$RFollowerStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$RFollowerStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -93,17 +93,17 @@
 		</Init>
 		<Story name="Forwarding">
 			<Act name="EgoAct">
-				<ManeuverGroup maximumExecutionCount="1" name="Maneuver">
+				<ManeuverGroup name="Maneuver" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="Ego" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="Continue">
 								<PrivateAction>
 									<LongitudinalAction>
 										<SpeedAction>
-											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionDynamics dynamicsShape="linear" value="2" dynamicsDimension="time" />
 											<SpeedActionTarget>
 												<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 											</SpeedActionTarget>
@@ -113,9 +113,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="0" name="ondition">
+									<Condition name="ondition" delay="0" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -123,17 +123,17 @@
 						</Event>
 					</Maneuver>
 				</ManeuverGroup>
-				<ManeuverGroup maximumExecutionCount="1" name="CutOut">
+				<ManeuverGroup name="CutOut" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="RPreceder" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="CutOutAction">
 								<PrivateAction>
 									<LateralAction>
 										<LaneChangeAction>
-											<LaneChangeActionDynamics dynamicsDimension="time" dynamicsShape="sinusoidal" value="3" />
+											<LaneChangeActionDynamics dynamicsShape="sinusoidal" value="3" dynamicsDimension="time" />
 											<LaneChangeTarget>
 												<AbsoluteTargetLane value="-4" />
 											</LaneChangeTarget>
@@ -143,9 +143,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="$LaneChangeStart" name="Lane change condition">
+									<Condition name="Lane change condition" delay="$LaneChangeStart" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -155,9 +155,9 @@
 				</ManeuverGroup>
 				<StartTrigger>
 					<ConditionGroup>
-						<Condition conditionEdge="rising" delay="0" name="ActStart">
+						<Condition name="ActStart" delay="0" conditionEdge="rising">
 							<ByValueCondition>
-								<SimulationTimeCondition rule="greaterThan" value="0" />
+								<SimulationTimeCondition value="0" rule="greaterThan" />
 							</ByValueCondition>
 						</Condition>
 					</ConditionGroup>

@@ -1,5 +1,5 @@
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader author="" date="2020-10-09T10:00:00" description="ego-vehicle performs a lane change from the middle lane to the right lane with a preceding on the starting lane and a preceding on the target lane" revMajor="1" revMinor="0" />
+	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="ego-vehicle performs a lane change from the middle lane to the right lane with a preceding on the starting lane and a preceding on the target lane" author="" />
 	<ParameterDeclarations>
 		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
 		<ParameterDeclaration name="EgoStartS" parameterType="double" value="60" />
@@ -38,14 +38,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$EgoStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$EgoStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -57,14 +57,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$PrecederStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$PrecederStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -76,14 +76,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-4" offset="0" roadId="0" s="$RPrecederStartS" />
+								<LanePosition roadId="0" laneId="-4" offset="0" s="$RPrecederStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -95,20 +95,20 @@
 		</Init>
 		<Story name="LaneChange">
 			<ParameterDeclarations>
-				<ParameterDeclaration name="owner" parameterType="string" value="OverTaker" />
+				<ParameterDeclaration parameterType="string" name="owner" value="OverTaker" />
 			</ParameterDeclarations>
 			<Act name="EgoAct">
-				<ManeuverGroup maximumExecutionCount="1" name="Maneuver">
+				<ManeuverGroup name="Maneuver" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="Ego" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="CutInAction">
 								<PrivateAction>
 									<LateralAction>
 										<LaneChangeAction>
-											<LaneChangeActionDynamics dynamicsDimension="time" dynamicsShape="sinusoidal" value="3" />
+											<LaneChangeActionDynamics dynamicsShape="sinusoidal" value="3" dynamicsDimension="time" />
 											<LaneChangeTarget>
 												<AbsoluteTargetLane value="-4" />
 											</LaneChangeTarget>
@@ -118,9 +118,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="$EgoLaneChangeStart" name="Lane change condition">
+									<Condition name="Lane change condition" delay="$EgoLaneChangeStart" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -130,9 +130,9 @@
 				</ManeuverGroup>
 				<StartTrigger>
 					<ConditionGroup>
-						<Condition conditionEdge="rising" delay="0" name="EgoActStart">
+						<Condition name="EgoActStart" delay="0" conditionEdge="rising">
 							<ByValueCondition>
-								<SimulationTimeCondition rule="greaterThan" value="0" />
+								<SimulationTimeCondition value="0" rule="greaterThan" />
 							</ByValueCondition>
 						</Condition>
 					</ConditionGroup>

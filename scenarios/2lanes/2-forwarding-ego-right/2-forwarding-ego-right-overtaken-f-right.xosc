@@ -1,5 +1,5 @@
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader author="esmini-team" date="2020-10-09T10:00:00" description="ego-vehicle drives on the right lane with a following vehicle while being overtaken" revMajor="1" revMinor="0" />
+	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="ego-vehicle drives on the right lane with a following vehicle while being overtaken" author="esmini-team" />
 	<ParameterDeclarations>
 		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
 		<ParameterDeclaration name="EgoStartS" parameterType="double" value="75" />
@@ -37,14 +37,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-4" offset="0" roadId="0" s="$EgoStartS" />
+								<LanePosition roadId="0" laneId="-4" offset="0" s="$EgoStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -56,14 +56,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-4" offset="0" roadId="0" s="$RFVehicleStartS" />
+								<LanePosition roadId="0" laneId="-4" offset="0" s="$RFVehicleStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -75,14 +75,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$OverTakerStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$OverTakerStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$OverTakerStartSpeed" />
 								</SpeedActionTarget>
@@ -94,17 +94,17 @@
 		</Init>
 		<Story name="Forwarding">
 						<Act name="EgoOverTakenAct">
-				<ManeuverGroup maximumExecutionCount="1" name="Maneuver">
+				<ManeuverGroup name="Maneuver" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="Ego" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="Continue">
 								<PrivateAction>
 									<LongitudinalAction>
 										<SpeedAction>
-											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionDynamics dynamicsShape="linear" value="2" dynamicsDimension="time" />
 											<SpeedActionTarget>
 												<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 											</SpeedActionTarget>
@@ -114,9 +114,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="0" name="ondition">
+									<Condition name="ondition" delay="0" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -124,17 +124,17 @@
 						</Event>
 					</Maneuver>
 				</ManeuverGroup>
-				<ManeuverGroup maximumExecutionCount="1" name="ManeuverOvertaker">
+				<ManeuverGroup name="ManeuverOvertaker" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="OverTaker" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="Continue">
 								<PrivateAction>
 									<LongitudinalAction>
 										<SpeedAction>
-											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionDynamics dynamicsShape="linear" value="2" dynamicsDimension="time" />
 											<SpeedActionTarget>
 												<AbsoluteTargetSpeed value="$OverTakerTargetSpeed" />
 											</SpeedActionTarget>
@@ -144,9 +144,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="0" name="condition">
+									<Condition name="condition" delay="0" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -156,9 +156,9 @@
 				</ManeuverGroup>
 				<StartTrigger>
 					<ConditionGroup>
-						<Condition conditionEdge="rising" delay="1" name="ActStart">
+						<Condition name="ActStart" delay="1" conditionEdge="rising">
 							<ByValueCondition>
-								<SimulationTimeCondition rule="greaterThan" value="0" />
+								<SimulationTimeCondition value="0" rule="greaterThan" />
 							</ByValueCondition>
 						</Condition>
 					</ConditionGroup>
@@ -167,9 +167,9 @@
 		</Story>
 		<StopTrigger>
 			<ConditionGroup>
-				<Condition conditionEdge="rising" delay="8" name="Stop">
+				<Condition name="Stop" delay="8" conditionEdge="rising">
 					<ByValueCondition>
-						<SimulationTimeCondition rule="greaterThan" value="0" />
+						<SimulationTimeCondition value="0" rule="greaterThan" />
 					</ByValueCondition>
 				</Condition>
 			</ConditionGroup>

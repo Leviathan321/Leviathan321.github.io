@@ -1,5 +1,5 @@
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader author="" date="2020-10-09T10:00:00" description="ego-vehicle drives on the left lane with a preceding vehicle on the left" revMajor="1" revMinor="0" />
+	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="ego-vehicle drives on the left lane with a preceding vehicle on the left" author="" />
 	<ParameterDeclarations>
 		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
 		<ParameterDeclaration name="EgoStartS" parameterType="double" value="50" />
@@ -31,14 +31,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$EgoStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$EgoStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 								</SpeedActionTarget>
@@ -50,14 +50,14 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition laneId="-3" offset="0" roadId="0" s="$PrecederStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$PrecederStartS" />
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
 								<SpeedActionTarget>
 									<AbsoluteTargetSpeed value="$PrecederTargetSpeed" />
 								</SpeedActionTarget>
@@ -69,17 +69,17 @@
 		</Init>
 		<Story name="Forwarding">
 						<Act name="EgoAct">
-				<ManeuverGroup maximumExecutionCount="1" name="Maneuver">
+				<ManeuverGroup name="Maneuver" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
 						<EntityRef entityRef="Ego" />
 					</Actors>
 					<Maneuver name="TheManeuver">
-						<Event maximumExecutionCount="1" name="Event" priority="overwrite">
+						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
 							<Action name="Continue">
 								<PrivateAction>
 									<LongitudinalAction>
 										<SpeedAction>
-											<SpeedActionDynamics dynamicsDimension="time" dynamicsShape="linear" value="2" />
+											<SpeedActionDynamics dynamicsShape="linear" value="2" dynamicsDimension="time" />
 											<SpeedActionTarget>
 												<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
 											</SpeedActionTarget>
@@ -89,9 +89,9 @@
 							</Action>
 							<StartTrigger>
 								<ConditionGroup>
-									<Condition conditionEdge="none" delay="0" name="ondition">
+									<Condition name="ondition" delay="0" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition rule="greaterThan" value="0" />
+											<SimulationTimeCondition value="0" rule="greaterThan" />
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -101,9 +101,9 @@
 				</ManeuverGroup>
 				<StartTrigger>
 					<ConditionGroup>
-						<Condition conditionEdge="rising" delay="0" name="EgoActStart">
+						<Condition name="EgoActStart" delay="0" conditionEdge="rising">
 							<ByValueCondition>
-								<SimulationTimeCondition rule="greaterThan" value="0" />
+								<SimulationTimeCondition value="0" rule="greaterThan" />
 							</ByValueCondition>
 						</Condition>
 					</ConditionGroup>
