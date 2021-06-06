@@ -13,7 +13,7 @@ permalink: /scenarios/3lanes/3-forwarding-ego-middle
 
 # Simulation
 
-To run a scenario in a simulator the following files need to be downloaded and placed into the the same folder as the scenario: [Catalogs](/Catalogs)
+To run a scenario in a simulator the following files need to be downloaded and placed into the the same folder as the scenario: [Catalogs](https://downgit.github.io/#/home?url=https://github.com/Leviathan321/Leviathan321.github.io/tree/gh-pages-local/Catalogs)
 
 [level up](../)
 
