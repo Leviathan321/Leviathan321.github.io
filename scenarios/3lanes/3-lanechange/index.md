@@ -1,6 +1,6 @@
 ---
 layout: article
-title: /scenarios/3lanes/3-lanechange
+title: scenarios\3lanes\3-lanechange
 permalink: /scenarios/3lanes/3-lanechange
 ---
 | Scenario name  | Description |  Preview | 
@@ -17,10 +17,6 @@ permalink: /scenarios/3lanes/3-lanechange
 | [3-lanechange-right-ego-middle-f-right](/scenarios/3lanes/3-lanechange/3-lanechange-right-ego-middle-f-right.xosc)  | ego-vehicle performs a lane change from the middle lane to the right lane with a following vehicle on the target lane  |  ![image](3-lanechange-right-ego-middle-f-right.gif)  | 
 | [3-lanechange-right-ego-middle-p-middle-p-right](/scenarios/3lanes/3-lanechange/3-lanechange-right-ego-middle-p-middle-p-right.xosc)  | ego-vehicle performs a lane change from the middle lane to the right lane with a preceding on the starting lane and a preceding on the target lane  |  ![image](3-lanechange-right-ego-middle-p-middle-p-right.gif)  | 
 | [3-lanechange-right-ego-right-f-middle-f-right](/scenarios/3lanes/3-lanechange/3-lanechange-right-ego-right-f-middle-f-right.xosc)  | ego-vehicle performs a lane change from the middle lane to the right lane with a following vehicle on the starting lane and a following vehicle on the target lane  |  ![image](3-lanechange-right-ego-right-f-middle-f-right.gif)  | 
-
-# Simulation
-
-To run a scenario in a simulator the following files need to be downloaded and placed into the the same folder as the scenario: [Catalogs](https://downgit.github.io/#/home?url=https://github.com/Leviathan321/Leviathan321.github.io/tree/gh-pages-local/Catalogs)
 
 [level up](../)
 

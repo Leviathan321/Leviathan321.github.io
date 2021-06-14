@@ -1,3 +1,8 @@
+---
+layout: article
+title: 3lanes
+permalink: /scenarios/3lanes/
+---
 # 3lanes
 
 - [3-forwarding-ego-left](/scenarios/3lanes/3-forwarding-ego-left)

@@ -1,6 +1,6 @@
 ---
 layout: article
-title: /scenarios/3lanes/3-forwarding-ego-right
+title: scenarios\3lanes\3-forwarding-ego-right
 permalink: /scenarios/3lanes/3-forwarding-ego-right
 ---
 | Scenario name  | Description |  Preview | 
@@ -12,10 +12,6 @@ permalink: /scenarios/3lanes/3-forwarding-ego-right
 | [3-forwarding-ego-right-p-middle-p-right](/scenarios/3lanes/3-forwarding-ego-right/3-forwarding-ego-right-p-middle-p-right.xosc)  | ego-vehicle drives on the right lane with a preceding vehicle and a preceding vehicle on the left  |  ![image](3-forwarding-ego-right-p-middle-p-right.gif)  | 
 | [3-forwarding-ego-right-p-middle_](/scenarios/3lanes/3-forwarding-ego-right/3-forwarding-ego-right-p-middle_.xosc)  | ego-vehicle drives on the right lane with a preceding vehicle and a preceding vehicle on the left  |  ![image](3-forwarding-ego-right-p-middle_.gif)  | 
 | [3-forwarding-ego-right-p-right-overtake-twice](/scenarios/3lanes/3-forwarding-ego-right/3-forwarding-ego-right-p-right-overtake-twice.xosc)  | ego-vehicle drives on the right lane with a preceding vehicle while being overtaken two times on the left  |  ![image](3-forwarding-ego-right-p-right-overtake-twice.gif)  | 
-
-# Simulation
-
-To run a scenario in a simulator the following files need to be downloaded and placed into the the same folder as the scenario: [Catalogs](https://downgit.github.io/#/home?url=https://github.com/Leviathan321/Leviathan321.github.io/tree/gh-pages-local/Catalogs)
 
 [level up](../)
 
