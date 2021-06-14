@@ -1,27 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2021 (x64) (http://www.altova.com) by louis (louis 
+	com) -->
+<!-- Demonstrate basic manevers and use of interactive controller -->
+<!-- In this case the user controls the white car being overtaken -->
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="osc-schema.xsd">
-	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="Basic cut-in with interactive controller" author="esmini-team" />
+	<FileHeader revMajor="1" revMinor="0" date="2020-10-09T10:00:00" description="ego-vehicle performs a lane change from the left lane to the right lane with a following vehicle on the target lane" author="esmini-team"/>
 	<ParameterDeclarations>
-		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white" />
-		<ParameterDeclaration name="RFVehicle" parameterType="string" value="car_yellow" />
-		<ParameterDeclaration name="EgoStartS" parameterType="double" value="40" />
-		<ParameterDeclaration name="RFollowerStartS" parameterType="double" value="25" />
-		<ParameterDeclaration name="EgoTargetSpeed" parameterType="double" value="30" />
-		<ParameterDeclaration name="EgoLaneChangeStart" parameterType="double" value="1" />
+		<ParameterDeclaration name="HostVehicle" parameterType="string" value="car_white"/>
+		<ParameterDeclaration name="RFVehicle" parameterType="string" value="car_yellow"/>
+		<ParameterDeclaration name="EgoStartS" parameterType="double" value="40"/>
+		<ParameterDeclaration name="RFollowerStartS" parameterType="double" value="25"/>
+		<ParameterDeclaration name="EgoTargetSpeed" parameterType="double" value="30"/>
+		<ParameterDeclaration name="EgoLaneChangeStart" parameterType="double" value="1"/>
 	</ParameterDeclarations>
 	<CatalogLocations>
 		<VehicleCatalog>
-			<Directory path="Catalogs/Vehicles" />
+			<Directory path="Catalogs/Vehicles"/>
 		</VehicleCatalog>
 	</CatalogLocations>
 	<RoadNetwork>
-		<LogicFile filepath="Catalogs/roads/2lane-motorway.xodr" />
+		<LogicFile filepath="Catalogs/roads/2lane-motorway.xodr"/>
 	</RoadNetwork>
 	<Entities>
 		<ScenarioObject name="Ego">
-			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$HostVehicle" />
+			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$HostVehicle"/>
 		</ScenarioObject>
 		<ScenarioObject name="RFollower">
-			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$RFVehicle" />
+			<CatalogReference catalogName="VehicleCatalogChanged" entryName="$RFVehicle"/>
 		</ScenarioObject>
 	</Entities>
 	<Storyboard>
@@ -31,16 +36,16 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition roadId="0" laneId="-3" offset="0" s="$EgoStartS" />
+								<LanePosition roadId="0" laneId="-3" offset="0" s="$EgoStartS"/>
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1"/>
 								<SpeedActionTarget>
-									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
+									<AbsoluteTargetSpeed value="$EgoTargetSpeed"/>
 								</SpeedActionTarget>
 							</SpeedAction>
 						</LongitudinalAction>
@@ -50,16 +55,16 @@
 					<PrivateAction>
 						<TeleportAction>
 							<Position>
-								<LanePosition roadId="0" laneId="-4" offset="0" s="$RFollowerStartS" />
+								<LanePosition roadId="0" laneId="-4" offset="0" s="$RFollowerStartS"/>
 							</Position>
 						</TeleportAction>
 					</PrivateAction>
 					<PrivateAction>
 						<LongitudinalAction>
 							<SpeedAction>
-								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1" />
+								<SpeedActionDynamics dynamicsShape="step" dynamicsDimension="time" value="1"/>
 								<SpeedActionTarget>
-									<AbsoluteTargetSpeed value="$EgoTargetSpeed" />
+									<AbsoluteTargetSpeed value="$EgoTargetSpeed"/>
 								</SpeedActionTarget>
 							</SpeedAction>
 						</LongitudinalAction>
@@ -71,7 +76,7 @@
 			<Act name="EgoAct">
 				<ManeuverGroup name="Maneuver" maximumExecutionCount="1">
 					<Actors selectTriggeringEntities="false">
-						<EntityRef entityRef="Ego" />
+						<EntityRef entityRef="Ego"/>
 					</Actors>
 					<Maneuver name="TheManeuver">
 						<Event name="Event" maximumExecutionCount="1" priority="overwrite">
@@ -79,9 +84,9 @@
 								<PrivateAction>
 									<LateralAction>
 										<LaneChangeAction>
-											<LaneChangeActionDynamics dynamicsShape="sinusoidal" value="3" dynamicsDimension="time" />
+											<LaneChangeActionDynamics dynamicsShape="sinusoidal" value="3" dynamicsDimension="time"/>
 											<LaneChangeTarget>
-												<AbsoluteTargetLane value="-4" />
+												<AbsoluteTargetLane value="-4"/>
 											</LaneChangeTarget>
 										</LaneChangeAction>
 									</LateralAction>
@@ -91,7 +96,7 @@
 								<ConditionGroup>
 									<Condition name="Lane change condition" delay="$EgoLaneChangeStart" conditionEdge="none">
 										<ByValueCondition>
-											<SimulationTimeCondition value="0" rule="greaterThan" />
+											<SimulationTimeCondition value="0" rule="greaterThan"/>
 										</ByValueCondition>
 									</Condition>
 								</ConditionGroup>
@@ -103,13 +108,13 @@
 					<ConditionGroup>
 						<Condition name="EgoActStart" delay="0" conditionEdge="rising">
 							<ByValueCondition>
-								<SimulationTimeCondition value="0" rule="greaterThan" />
+								<SimulationTimeCondition value="0" rule="greaterThan"/>
 							</ByValueCondition>
 						</Condition>
 					</ConditionGroup>
 				</StartTrigger>
 			</Act>
 		</Story>
-		<StopTrigger />
+		<StopTrigger/>
 	</Storyboard>
 </OpenSCENARIO>
