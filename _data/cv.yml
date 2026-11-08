@@ -1,0 +1,64 @@
+# CV shown on the /cv/ page. Types: map, list, time_table, nested_list.
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: PhD Researcher – Generative AI
+      institution: BMW Group, Munich, Germany
+      logo: bmw.svg
+      year: 02/2025 – present
+
+    - title: Staff Research & Development Engineer
+      institution: fortiss GmbH, Munich, Germany
+      logo: fortiss.png
+      year: 02/2019 – 09/2024
+      description:
+        - title: <a href="https://www.fortiss.org/forschung/projekte/detail/foceta">FOCETA</a> (EU Horizon 2020)
+          contents:
+            - Methodology for the development of safe autonomous systems; research on accelerating simulation-based system-level testing with ML techniques.
+        - title: <a href="https://www.fortiss.org/forschung/projekte/detail/rtaphm">RTAPHM</a> (BMWK)
+          contents:
+            - Design and implementation of a secure cloud platform for booking services with unmanned aerial vehicles.
+            - Runtime monitoring framework for workflow constraints in distributed systems using Datalog-based specifications.
+            - Deployment of infrastructure components with Docker/Kubernetes on Google Cloud Platform.
+        - title: <a href="https://www.fortiss.org/forschung/projekte/detail/apollo">Apollo</a> (with Huawei)
+          contents:
+            - Automated generation of dynamic assurance cases for autonomous systems (ISO 26262), applied to the Apollo autonomous driving platform.
+
+    - title: Research Scientist, Chair for Organic Computing
+      institution: University of Augsburg, Germany
+      logo: uni-augsburg.svg
+      year: 04/2018 – 01/2019
+      description:
+        - Simulation platform for a demonstrator applying Learning Classifier Systems to path planning for an Arduino robot.
+
+    - title: Research Scientist, Chair for Theoretical Computer Science
+      institution: University of Augsburg, Germany
+      logo: uni-augsburg.svg
+      year: 11/2016 – 03/2018
+      description:
+        - Scenario modeling in the process mining domain using visual specification languages such as Petri nets.
+        - Synthesis of bounded Petri nets from prime event structures with cutting context using wrong continuations (presented at AWPN 2017).
+
+    - title: Master Thesis
+      institution: German Aerospace Center (DLR), Augsburg, Germany
+      logo: dlr.svg
+      year: 11/2015 – 06/2016
+      description:
+        - Design, implementation, and evaluation of an evolutionary optimization approach for the robotic removal of semi-finished carbon-fiber-reinforced plastic cuts in 2D (<a href="https://elib.dlr.de/107305/">thesis</a>).
+
+    - title: Internship
+      institution: KUKA, Augsburg, Germany
+      logo: kuka.svg
+      year: 08/2013 – 08/2014
+      description:
+        - Graphical user interface for vision-based robotic gripping at a conveyor.
+
+# TODO: add your degrees (LinkedIn export did not include education)
+# - title: Education
+#   type: time_table
+#   contents:
+#     - title: M.Sc. Computer Science
+#       institution: University of Augsburg, Germany
+      logo: uni-augsburg.svg
+#       year: 2016

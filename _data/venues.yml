@@ -1,0 +1,61 @@
+# Badge colors on the publications page, keyed by the bib `abbr` field.
+# `text` sets the badge text color (default white).
+# DBLP-style: conferences (incl. workshops, demos) vs. journals; pre-prints in grey.
+
+# Conferences, workshops, demos, industry tracks, thesis
+"ICSE": &conference
+  color: "#4a7aa8"
+"ESEC/FSE": *conference
+"FSE": *conference
+"ASE": *conference
+"ISSTA": *conference
+"ICST": *conference
+"SANER": *conference
+"ESEM": *conference
+"ICSME": *conference
+"QUATIC": *conference
+"SOFSEM": *conference
+"SBST": *conference
+"SAC": *conference
+"AST": *conference
+"ICWE": *conference
+"ProWeb": *conference
+"IV": *conference
+"ITSC": *conference
+"ICSEW": *conference
+"ICSTW": *conference
+"DeepTest": *conference
+"SAFECOMP": *conference
+"EDCC<br>Workshop": *conference
+"ICSE<br>Demo Track": *conference
+"AISoLA": *conference
+"AWPN": *conference
+"ATAED": *conference
+"ISSREW": *conference
+"WSE": *conference
+"ASE<br>Industry Track": *conference
+"ASE<br>Demo Track": *conference
+"ESEC/FSE<br>Demo Track": *conference
+"ICWE<br>Demo Track": *conference
+"SCAM<br>Demo Track": *conference
+"Ph.D. <br> Thesis": *conference
+
+# Journals
+"TSE": &journal
+  color: "#a8577a"
+"TOSEM": *journal
+"EMSE": *journal
+"TECS": *journal
+"JSS": *journal
+"IST": *journal
+"STVR": *journal
+"JSEP": *journal
+"SQJ": *journal
+"SCICO": *journal
+"OJ-ITS": *journal
+"Adv. <br> Comp.": *journal
+
+# Pre-prints
+"pre-print":
+  color: "#a8a29e"
+  text: "#1c1c1d"

@@ -1,0 +1,387 @@
+@inproceedings{2027-Sorokin-ICSE,
+  code         = {https://github.com/ast-fortiss-tum/simfusion},
+  author    = {Lev Sorokin and Berfin Dinler and Alessio Gambi and Andrea Stocco},
+  title     = {{SimFusion}: Multi-Fidelity Simulation-based Testing of Automated Driving Systems},
+  booktitle = {Proceedings of the 49th IEEE/ACM International Conference on Software Engineering (ICSE)},
+  year      = {2027},
+  pdf       = {2027-Sorokin-ICSE.pdf},
+  series    = {ICSE '27},
+  publisher    = {ACM/IEEE},
+  pages        = {12 pages}, 
+  abbr         = {ICSE},
+  bibtex_show  = {true},
+  abstract     = {Simulation is widely used in the development and validation of automated driving systems (ADS) because it enables testing safety-critical behaviors without the risks and costs of onroad experimentation. During development, engineers often rely on different simulators: low-fidelity (LoFi) simulators support rapid prototyping and large-scale scenario exploration, while high-fidelity (HiFi) simulators provide realistic physics and perception modeling for reliable validation. However, integrating multiple simulators within the same testing workflow requires substantial engineering effort, and most pipelines therefore rely on a single simulator, limiting the ability to combine scalability with realism. In this paper, we present SimFusion, a multifidelity testing framework that dynamically orchestrates LoFi and HiFi simulations during test generation. SimFusion learns to predict whether simulations at different fidelity levels will agree on the criticality of a scenario. Scenarios likely to produce consistent outcomes are executed in fast LoFi simulation, while disagreement-prone cases are evaluated in HiFi simulation to ensure reliable failure detection. We evaluate SimFusion on two ADS stacks, Autoware Mini and the Frenetix motion planner, across four simulators: CARLA and BeamNG (HiFi) and CommonRoad and a ROS-based kinematic simulator (LoFi). SimFusion discovers more failures and achieves greater failure diversity than single-fidelity baselines while substantially reducing the number of HiFi simulations required. Our results show that multi-fidelity testing can improve both the effectiveness and scalability of system-level ADS validation, enabling faster testing cycles during system development and evolution.}
+}
+
+@misc{2026-Sorokin-STELLARD,
+    title={Diversity-Guided Search-Based Testing of Large Language Model Applications}, 
+    author = {Lev Sorokin and Ivan Vasilev and Ken E. Friedl and Andrea Stocco},
+    year={2026},
+    archivePrefix={arXiv},
+    primaryClass={cs.SE},
+	abbr         = {pre-print},
+	pdf          = {2026-Sorokin-STELLARD.pdf},
+	bibtex_show  = {true},
+	abstract = {Large Language Model (LLM)-based applications are increasingly
+deployed across domains including customer service, education, and mobil-
+ity. These systems are prone to inaccurate, fictitious, or harmful responses,
+and their vast, high-dimensional input space makes systematic testing partic-
+ularly challenging. In this paper, we present a search-based testing framework
+for LLM-based applications that incorporates failure diversity as an explicit
+optimization objective. Building on a discretization along stylistic, content-
+related, and perturbation dimensions, our framework maintains an archive of
+generated tests and rewards distance from that archive, while a repopulation
+operator periodically replaces non-failing tests in the population to sustain
+exploration. The repopulation operator is parameterized by its sampling strat-
+egy: replacement candidates are drawn either uniformly or by greedy distance
+maximization, two settings we compare empirically. We evaluate both against several baselines across three case studies—LLM
+safety, in-car navigation, and in-vehicle function control—covering five sys-
+tems under test, eight LLMs, and 18 distinct test configurations, with over
+one million executed tests. Our results show that all guided variants detect
+substantially more failures than random and combinatorial search in nearly
+all configurations. Among them, diversified search detects fewer failures, but
+covers a broader range of failure types in all case studies, with greedy repop-
+ulation offering the best tradeoff.}
+}
+
+@inproceedings{2026-Sorokin-ASE-industry,
+	doi          = {10.1145/3832783.3834506},
+	code         = {https://github.com/ast-fortiss-tum/ISU-Test},
+	author       = {Lev Sorokin and Chen Yang and Ken E. Friedl and Andrea Stocco},
+	title        = {Search-based Testing of Vision Language Models for In-Car Scene Understanding},
+	booktitle    = {Proceedings of the 41th IEEE/ACM International Conference on Automated Software Engineering - Industry Showcase Track},
+	series       = {ASE '26 - Industry Showcase Track},
+	publisher    = {IEEE},
+	pdf          = {2026-Sorokin-ASE-industry.pdf},
+	pages        = {12 pages},
+	abbr         = {ASE<br>Industry Track},
+	year         = 2026,
+	bibtex_show  = {true},
+	abstract = {In the automotive domain, in-car scene understanding (ISU) enables
+the detection of safety-critical events, such as driver distraction, and
+supports drivers or passengers by analyzing the in-car scene and
+adapting the environment (e.g., ambient lighting). The industry is
+increasingly exploring vision-language models (VLMs) to interpret
+camera-recorded in-car scenes and extract information for down-
+stream reasoning tasks. However, VLMs may generate incomplete,
+erroneous, or misleading scene descriptions, highlighting the need
+for systematic testing. Collecting real in-vehicle data is costly, diffi-
+cult to scale, and often infeasible, particularly in early design stages.
+In this paper, we present ISU-Test, an automated testing approach
+that combines rendering-based scene generation with search-based
+testing to evaluate ISU systems. By framing testing as an optimiza-
+tion problem and systematically modifying scene parameters, our
+method generates diverse in-car scenarios and explores a wide
+range of configurations. We evaluate ISU-Test on both an industrial
+prototype and open-source VLMs across two case studies: question
+answering and captioning, comparing against randomized scenario
+generation. Results show that ISU-Test significantly outperforms
+the baseline, achieving up to 10x higher failure rates and up to 3.6x
+higher coverage.}
+}
+
+@inproceedings{2026-Negi-ITSC,
+	title = {Automated Evaluation of Multi-Turn Dialogues in In-Car Conversational Assistants},
+	author = {Vaishnav Negi and Lev Sorokin and Soroosh Tayebi Arasteh and Andrea Stocco},
+    year = {2026},
+	booktitle = {Proceedings of the 29th 29th IEEE International Conference on Intelligent Transportation Systems},
+	pdf = {2026-Negi-ITSC.pdf},
+	abbr = {ITSC},
+	bibtex_show = {true},
+	abstract = {In-car conversational assistants (ICAs) are increasingly
+integrated into vehicles to support route planning, vehicle
+control, and information access. Ensuring their reliability is
+challenging due to multi-turn interactions, the absence of explicit
+ground truth, and strict safety constraints. Existing evaluation
+techniques fall short, as they target single-turn settings and fail to
+capture constraint handling, context retention, and safety-critical
+behavior across turns. We propose an automated framework for
+testing the multi-turn conversational capabilities of ICAs. The
+system is treated as a black box and evaluated via closed-loop
+simulation with a strategy-guided user simulator, an adversarial
+strategy manager, and a two-tier LLM judge assessing turn-level
+failures and conversation-level quality. We evaluate the approach
+on an industrial ICA with six LLM backends and twelve human
+annotators. The automated judge shows substantial agreement
+with humans, and strategy guidance uncovers 2.96x more unique
+failure types per conversation and more than doubles the number
+of unique failing conversations compared to unguided simulation.}
+}
+
+@article{2026-Habicht-JSS,
+	doi          = {10.1016/j.jss.2026.112915},
+	title = {Benchmarking Contextual Understanding for In-Car Conversational Systems}, 
+	author = {Philipp Habicht and Lev Sorokin and Abdullah Saydemir and Ken E. Friedl and Andrea Stocco},
+	year = {2026},
+	journal = {Journal of Systems and Software},
+	pdf = {2026-Habicht-JSS.pdf},
+	note = {[Invited Journal-first track at ASE 2026]},
+	abbr = {JSS},
+	bibtex_show  = {true},
+	abstract = {In-Car Conversational Question Answering (ConvQA) systems significantly enhance user experience by enabling seamless voice interactions. However, assessing their accuracy and reliability remains a challenge. This paper explores the use of Large Language Models (LLMs) along side advanced prompt ing techniques and agent-based methods to evaluate the extent to which ConvQA system responses adhere to user utterances. The focus lies on contextual understanding, the ability to provide accurate venue recommendations considering the user constraints and situational context. To evaluate the utterance/response coherence using an LLM, we synthetically generate user utterances accompanied by correct but also modified failure-containing system responses. We use input-output, chain of thought, self-consistency prompting, as well as multi-agent prompting techniques, with 13 reasoning and non-reasoning LLMs, varying in model size and providers, from OpenAI, DeepSeek, Mistral AI, and Meta. We evaluate our approach on a case study that involves a user asking for restaurant recommendations. The most substantial improvements are observed for non-reasoning models when applying advanced prompting techniques, in particular, when applying multi-agent prompting. However, non-reasoning models are significantly surpassed by reasoning models, where the best result is achieved with single-agent prompting incorporating self-consistency. Notably, the DeepSeek-R1 model achieves the highest F1-score of 0.990 at a cost of 0.002 USD per request. Overall, the best tradeoff between effectiveness and cost/time efficiency is achieved with the non-reasoning model DeepSeek-V3.}
+}
+
+@article{2026-Sorokin-EMSE,
+	doi          = {10.1007/s10664-026-10821-7},
+	code         = {https://github.com/ast-fortiss-tum/MultiSim},
+	title        = {Simulator Ensembles for Trustworthy Autonomous Driving Systems Testing},
+	author       = {Lev Sorokin and Matteo Biagiola and Andrea Stocco},
+	year         = 2026,
+	journal      = {Empirical Software Engineering},
+	publisher    = {Springer},
+	year      = {2026},
+  	volume    = {31},
+  	number    = {4},
+  	pages     = {80},
+	note         = {[Invited Journal-first track at ASE 2026]},
+	url          = {https://link.springer.com/article/10.1007/s10664-026-10821-7},
+	pdf          = {2026-Sorokin-EMSE.pdf},
+	abbr         = {EMSE},
+	bibtex_show  = {true},
+	abstract = {Scenario-based testing with driving simulators is extensively used to identify failing conditions of automated driving assistance systems (ADAS) and reduce the amount of in-field road testing. However, existing studies have shown that repeated test execution in the same as well as in distinct simulators can yield different outcomes, which can be attributed to sources of flakiness or different implementations of the physics, among other factors. In this paper, we present MultiSim, a novel approach to multi-simulation ADAS testing based on a search-based testing approach that leverages an ensemble of simulators to identify failure-inducing, simulator-agnostic test scenarios. During the search, each scenario is evaluated jointly on multiple simulators. Scenarios that produce consistent results across simulators are prioritized for further exploration, while those that fail on only a subset of simulators are given less priority, as they may reflect simulator-specific issues rather than generalizable failures. Our case study, which involves testing a deep neural network-based ADAS on different pairs of three widely used simulators, demonstrates that MultiSim outperforms single-simulator testing by achieving on average a higher rate of simulator-agnostic failures by 51%. Compared to a state-of-the-art multi-simulator approach that combines the outcome of independent test generation campaigns obtained in different simulators, MultiSim identifies 54% more simulator-agnostic failing tests while showing a comparable validity rate. An enhancement of MultiSim that leverages surrogate models to predict simulator disagreements and bypass executions does not only increase the average number of valid failures but also improves efficiency in finding the first valid failure.}
+}
+
+@inproceedings{2026-Sorokin-SANER,
+	doi          = {10.1109/saner67736.2026.00093},
+	code         = {https://github.com/ast-fortiss-tum/STELLAR},
+	title        = {STELLAR: A Search-Based Testing Framework for Large Language Model Applications},
+	author       = {Lev Sorokin and Ivan Vasilev and Ken E. Friedl and Andrea Stocco},
+	year         = 2026,
+	booktitle    = {Proceedings of the 33rd IEEE International Conference on Software Analysis, Evolution and Reengineering},
+	series       = {SANER '26},
+	publisher    = {IEEE},
+	pdf          = {2026-Sorokin-SANER.pdf},
+	pages        = {10 pages},
+	abbr         = {SANER},
+	bibtex_show  = {true},
+	abstract = {Large Language Model (LLM)-based applications
+are increasingly deployed across various domains, including
+customer service, education, and mobility. However, these systems
+are prone to inaccurate, fictitious, or harmful responses, and
+their vast, high-dimensional input space makes systematic testing
+particularly challenging. To address this, we present STELLAR,
+an automated search-based testing framework for LLM-based
+applications that systematically uncovers text inputs leading to
+inappropriate system responses. Our framework models test
+generation as an optimization problem and discretizes the input
+space into stylistic, content-related, and perturbation features.
+Unlike prior work that focuses on prompt optimization or
+coverage heuristics, our work employs evolutionary optimization
+to dynamically explore feature combinations that are more likely
+to expose failures. We evaluate STELLAR on three LLM-based
+conversational question-answering systems. The first focuses on
+safety, benchmarking both public and proprietary LLMs against
+malicious or unsafe prompts. The second and third target
+navigation, using an open-source and an industrial retrieval-
+augmented system for in-vehicle venue recommendations. Over-
+all, STELLAR exposes up to 4.3x (average 2.5x) more failures
+than the existing baseline approaches.
+},
+	award        = {[IEEE Computer Society TCSE Distinguished Paper Award]},
+	award_name   = {:trophy: IEEE Computer Society TCSE Distinguished Paper Award}
+}
+
+@inproceedings{2025-Giebisch-IV,
+	doi          = {10.1109/iv64158.2025.11097480},
+	author       = {Rafael Giebisch and Ken E. Friedl and Lev Sorokin and Andrea Stocco},
+	title        = {Automated Factual Benchmarking for In-Car Conversational Systems using Large Language Models}, 
+	booktitle    = {Proceedings of the 36th IEEE Intelligent Vehicles Symposium},
+	series       = {IV '25},
+	publisher    = {IEEE},
+	pdf          = {2025-Giebisch-IV.pdf},
+	pages        = {8 pages},
+	abbr         = {IV},
+	year         = 2025,
+	bibtex_show  = {true},
+	abstract = {In-car conversational systems bring the promise to
+improve the in-vehicle user experience. Modern conversational
+systems are based on Large Language Models (LLMs), which
+makes them prone to errors such as hallucinations, i.e., inaccurate,
+fictitious, and therefore factually incorrect information.
+In this paper, we present an LLM-based methodology for
+the automatic factual benchmarking of in-car conversational
+systems. We instantiate our methodology with five LLMbased
+methods, leveraging ensembling techniques and diverse
+personae to enhance agreement and minimize hallucinations.
+We use our methodology to evalute CarExpert, an in-car
+retrieval-augmented conversational question answering system,
+with respect to the factual correctness to a vehicle's manual.
+We produced a novel dataset specifically created for the in-car
+domain, and tested our methodology against an expert evaluation.
+Our results show that the combination of GPT-4 with the
+Input Output Prompting achieves over 90% factual correctness
+agreement rate with expert evaluations, other than being the
+most efficient approach yielding an average response time of
+4.5s. Our findings suggest that LLM-based testing constitutes
+a viable approach for the validation of conversational systems
+regarding their factual correctness.}
+}
+
+@inproceedings{2026-Keklikci-DeepTest,
+	doi          = {10.1145/3786154.3796501},
+	title        = {Exida Test Generator at the DeepTest 2026 Tool Competition},
+	author       = {Kaan Gueney Keklikci and Dimitrij Krepis and Gaia Peressini and Lev Sorokin},
+	booktitle    = {Proceedings of the 7th IEEE/ACM International Workshop on Deep Learning for Testing and Testing for Deep Learning},
+	series       = {DeepTest '26},
+	publisher    = {ACM},
+	pages        = {3--5},
+	year         = 2026,
+	abbr         = {DeepTest},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2026-Sorokin-DeepTest,
+	doi          = {10.1145/3786154.3796504},
+	title        = {DeepTest Tool Competition 2026: Benchmarking an LLM-Based Automotive Assistant},
+	author       = {Lev Sorokin and Ivan Vasilev and Samuele Pasini},
+	booktitle    = {Proceedings of the 7th IEEE/ACM International Workshop on Deep Learning for Testing and Testing for Deep Learning},
+	series       = {DeepTest '26},
+	publisher    = {ACM},
+	pages        = {31--34},
+	year         = 2026,
+	abbr         = {DeepTest},
+	bibtex_show  = {true}
+}
+
+@article{2025-Sorokin-EMSE,
+	doi          = {10.1007/s10664-024-10564-3},
+	title        = {Can Search-Based Testing with Pareto Optimization Effectively Cover Failure-Revealing Test Inputs?},
+	author       = {Lev Sorokin and Damir Safin and Shiva Nejati},
+	journal      = {Empirical Software Engineering},
+	publisher    = {Springer},
+	volume       = {30},
+	number       = {1},
+	pages        = {26},
+	year         = 2025,
+	abbr         = {EMSE},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2024-Sorokin-SAFECOMP,
+	doi          = {10.1007/978-3-031-68606-1_7},
+	title        = {CyberDS: Auditable Monitoring in the Cloud},
+	arxiv        = {2312.12057},
+	author       = {Lev Sorokin and Ulrich Schoepp},
+	booktitle    = {Computer Safety, Reliability, and Security (SAFECOMP 2024)},
+	series       = {Lecture Notes in Computer Science},
+	publisher    = {Springer},
+	pages        = {100--115},
+	year         = 2024,
+	abbr         = {SAFECOMP},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2024-Sorokin-DeepTest,
+	doi          = {10.1145/3643786.3648023},
+	title        = {Guiding the Search Towards Failure-Inducing Test Inputs Using Support Vector Machines},
+	author       = {Lev Sorokin and Niklas Kerscher},
+	booktitle    = {Proceedings of the 5th IEEE/ACM International Workshop on Deep Learning for Testing and Testing for Deep Learning},
+	series       = {DeepTest '24},
+	publisher    = {ACM},
+	pages        = {9--12},
+	year         = 2024,
+	abbr         = {DeepTest},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2024-Sorokin-EDCC,
+	doi          = {10.1007/978-3-031-56776-6_5},
+	title        = {Towards Continuous Assurance Case Creation for ADS with the Evidential Tool Bus},
+	author       = {Lev Sorokin and Radouane Bouchekir and Tewodros A. Beyene and Brian Hsuan-Cheng Liao and Adam Molin},
+	booktitle    = {Dependable Computing -- EDCC 2024 Workshops},
+	series       = {Communications in Computer and Information Science},
+	publisher    = {Springer},
+	pages        = {49--61},
+	year         = 2024,
+	abbr         = {EDCC<br>Workshop},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2024-Sorokin-ICSE-Demo,
+	doi          = {10.1145/3639478.3640027},
+	code         = {https://github.com/opensbt},
+	title        = {OpenSBT: A Modular Framework for Search-based Testing of Automated Driving Systems},
+	author       = {Lev Sorokin and Tiziano Munaro and Damir Safin and Brian Hsuan-Cheng Liao and Adam Molin},
+	booktitle    = {Proceedings of the 46th IEEE/ACM International Conference on Software Engineering: Companion Proceedings},
+	series       = {ICSE-Companion '24},
+	publisher    = {ACM},
+	pages        = {94--98},
+	year         = 2024,
+	abbr         = {ICSE<br>Demo Track},
+	bibtex_show  = {true}
+}
+
+@article{2023-Nejati-IST,
+	doi          = {10.1016/j.infsof.2023.107286},
+	title        = {Reflections on Surrogate-Assisted Search-Based Testing: A Taxonomy and Two Replication Studies based on Industrial ADAS and Simulink Models},
+	author       = {Shiva Nejati and Lev Sorokin and Damir Safin and Federico Formica and Mohammad Mahdi Mahboob and Claudio Menghi},
+	journal      = {Information and Software Technology},
+	publisher    = {Elsevier},
+	volume       = {163},
+	pages        = {107286},
+	year         = 2023,
+	abbr         = {IST},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2023-Bensalem-AISoLA,
+	title        = {Continuous Engineering for Trustworthy Learning-Enabled Autonomous Systems},
+	author       = {Saddek Bensalem and Panagiotis Katsaros and Dejan Ni{\v{c}}kovi{\'c} and Brian Hsuan-Cheng Liao and Ricardo Ruiz Nolasco and others},
+	booktitle    = {International Conference on Bridging the Gap between AI and Reality (AISoLA 2023)},
+	series       = {Lecture Notes in Computer Science},
+	publisher    = {Springer},
+	pages        = {256--278},
+	year         = 2023,
+	abbr         = {AISoLA},
+	bibtex_show  = {true}
+}
+
+@misc{2022-Sorokin-arXiv,
+	title        = {Towards Auditable Distributed Systems},
+	author       = {Lev Sorokin},
+	howpublished = {arXiv preprint arXiv:2209.14071},
+	url          = {https://arxiv.org/abs/2209.14071},
+	arxiv        = {2209.14071},
+	year         = 2022,
+	abbr         = {pre-print},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2017-Bergenthum-AWPN,
+	title        = {Towards Compact Regions for Labeled Prime Event Structures},
+	author       = {Robin Bergenthum and Johannes Metzger and Lev Sorokin and Robert Lorenz},
+	booktitle    = {Proceedings of the Workshop on Algorithms and Tools for Petri Nets (AWPN 2017)},
+	address      = {Kgs. Lyngby, Denmark},
+	year         = 2017,
+	abbr         = {AWPN},
+	bibtex_show  = {true}
+}
+
+@inproceedings{2017-Lorenz-ATAED,
+	title        = {Synthesis of Bounded Petri Nets from Prime Event Structures with Cutting Context using Wrong Continuations},
+	author       = {Robert Lorenz and Johannes Metzger and Lev Sorokin},
+	booktitle    = {Proceedings of the International Workshop on Algorithms \& Theories for the Analysis of Event Data (ATAED 2017)},
+	series       = {CEUR Workshop Proceedings},
+	volume       = {1847},
+	pages        = {21--38},
+	address      = {Zaragoza, Spain},
+	url          = {https://ceur-ws.org/Vol-1847/paper02.pdf},
+	year         = 2017,
+	abbr         = {ATAED},
+	bibtex_show  = {true}
+}
+
+@article{2016-Bujtor-TECS,
+	title        = {Testing Preorders for dMTS: Deadlock- and the New Deadlock/Divergence-Testing},
+	author       = {Ferenc Bujtor and Lev Sorokin and Walter Vogler},
+	journal      = {ACM Transactions on Embedded Computing Systems},
+	publisher    = {ACM},
+	volume       = {16},
+	number       = {2},
+	pages        = {1--28},
+	year         = 2016,
+	abbr         = {TECS},
+	bibtex_show  = {true},
+	award        = {[Best Paper Award]},
+	award_name   = {:trophy: Best Paper Award}
+}

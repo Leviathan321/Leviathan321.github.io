@@ -1,0 +1,7 @@
+# Used by the repositories page (currently not enabled).
+github_users:
+  - Leviathan321
+
+repo_description_lines_max: 3
+
+github_repos: []

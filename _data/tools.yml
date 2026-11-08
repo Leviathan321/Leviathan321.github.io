@@ -1,0 +1,39 @@
+# Highlighted tools shown on the home page (in this order).
+# Fields: name, icon (file in assets/img/tools/), description, github (url), link_label (optional), paper (bib key on /publications/, optional), badge (optional)
+- name: STELLAR
+  icon: stellar.svg
+  description: Search-based testing framework for LLM-based applications.
+  github: https://github.com/ast-fortiss-tum/STELLAR
+  paper: 2026-Sorokin-SANER
+  badge: SANER'26 Distinguished Paper
+
+- name: OpenSBT
+  icon: opensbt.png
+  description: Modular framework for search-based testing of automated driving systems.
+  github: https://github.com/opensbt
+  paper: 2024-Sorokin-ICSE-Demo
+
+- name: SimFusion
+  icon: simfusion.png
+  description: Multi-fidelity simulation-based testing of automated driving systems.
+  github: https://github.com/ast-fortiss-tum/simfusion
+  paper: 2027-Sorokin-ICSE
+
+- name: MultiSim
+  icon: multisim.svg
+  description: Simulator ensembles for trustworthy testing of autonomous driving systems.
+  github: https://github.com/ast-fortiss-tum/MultiSim
+  paper: 2026-Sorokin-EMSE
+
+- name: ISU-Test
+  icon: isu-test.svg
+  description: Search-based testing of vision-language models for in-car scene understanding.
+  github: https://github.com/ast-fortiss-tum/ISU-Test
+  paper: 2026-Sorokin-ASE-industry
+
+- name: CyberDS
+  icon: cyberds.svg
+  description: Auditable runtime monitoring of distributed cloud systems with Datalog-based specifications and tamper-proof logs.
+  github: https://arxiv.org/abs/2312.12057
+  link_label: arXiv
+  paper: 2024-Sorokin-SAFECOMP
