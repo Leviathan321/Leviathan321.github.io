@@ -11,10 +11,6 @@ nav_order: 4
 
 + **2026** · Invited talk at the [TAROT Summer School 2026](https://tarot26.github.io) on testing, validation, and security of AI-enabled systems, Munich, Germany
 
-#### Summer Schools
-
-+ **2022** · [Summer School on Continuous Engineering and Deep Learning for Trustworthy Autonomous Systems](https://depend.csd.auth.gr/thessaloniki2022/) (co-organized by the H2020 project FOCETA), Thessaloniki, Greece, October 3–7, 2022
-
 #### Tutorials
 
 + **2024** · *Tutorial: OpenSBT*. [DeepTest 2024](https://conf.researchr.org/home/icse-2024/deeptest-2024) at ICSE 2024, Lisbon, Portugal

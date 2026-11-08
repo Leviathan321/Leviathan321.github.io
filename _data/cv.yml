@@ -54,6 +54,15 @@
       description:
         - Graphical user interface for vision-based robotic gripping at a conveyor.
 
+- title: Summer Schools
+  type: time_table
+  contents:
+    - title: Summer School on Continuous Engineering and Deep Learning for Trustworthy Autonomous Systems
+      institution: Aristotle University of Thessaloniki, Greece (co-organized by the H2020 project FOCETA)
+      year: 10/2022
+      description:
+        - Participant
+
 # TODO: add your degrees (LinkedIn export did not include education)
 # - title: Education
 #   type: time_table
